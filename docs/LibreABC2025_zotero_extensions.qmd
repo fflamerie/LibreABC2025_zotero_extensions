@@ -1,0 +1,156 @@
+---
+title: "Zotero+ : les extensions de Zotero"
+author: "Frédérique Flamerie"
+date: "9 septembre 2025"
+format: revealjs
+theme: simple
+footer: "LibreABC 2025"
+slide-number: true
+progress: true
+center: true
+embed-resources: true
+logo: "img/by-sa.png"
+
+---
+
+# Introduction
+
+## Propos {.smaller}
+
+Vous trouvez que Zotero remplit déjà pleinement son rôle d’assistant de recherche personnel ? Vous n’avez pas encore découvert la myriade de services qu’offrent ses extensions, développées par la communauté de Zotero. Cet atelier est organisé en deux parties. 
+
+Dans un premier temps, nous explorerons ensemble des extensions telles que [Actions & Tags](https://github.com/windingwind/zotero-actions-tags), [Linter](https://github.com/northword/zotero-format-metadata) et [Attanger](https://github.com/MuiseDestiny/zotero-attanger). Toutes permettent d’optimiser l’usage courant de la bibliothèque Zotero : modification des données bibliographiques, gestion des PDF, organisation de la bibliothèque, etc. 
+
+Dans un second temps, les participants seront invités à tester une ou plusieurs extensions de leur choix, puis à restituer les résultats de leurs tests. La synthèse de cet atelier pourrait constituer l’ébauche d’une page pour la base de connaissance en français maintenue par le collectif Traduction-Zotero-fr. 
+
+## Programme
+
+### Les essentielles
+#### Linter, pour déboulocher vos références
+#### Zutilo, le couteau suisse
+#### Actions & Tags, des menus déroulants et des scripts
+### A vous de tester
+
+# Les essentielles
+
+## Installer les 3 extensions essentielles
+
+👉 Mode d'emploi et vue d'ensemble dans la base de connaissance Zotero en français : [Les extensions de Zotero](https://docs.zotero-fr.org/kbfr/kbfr_extensions/)
+
+* [Linter](https://github.com/northword/zotero-format-metadata)
+* [Zutilo](https://github.com/wshanks/Zutilo)
+* [Actions & Tags](https://github.com/windingwind/zotero-actions-tags)
+
+💡 Installation facilitée avec l'extension des extensions, [Add-on Market for Zotero](https://github.com/syt2/zotero-addons)
+
+
+## Linter, pour déboulocher vos références 
+
+Les corrections effectuées par Linter peuvent être lancées sur une sélection de documents via le menu contextuel Linter :
+
+* soit de façon distincte et sélective,
+* soit toutes en même temps d'un seul coup avec la commande "Lint and Fix". Cette commande peut par ailleurs s'exécuter automatiquement à l'enregistrement d'un nouveau document.
+
+::: aside
+📌 Ces corrections peuvent être configurées et/ou désactivées de la commande "Lint and Fix" dans les paramètres de Linter.
+:::
+
+## La commande _Lint and Fix_ de Linter
+
+![Menu contextuel Linter, avec la commande "Lint and Fix" et les commandes individuelles](img/zotero_modules_linter_menu.png)
+
+## Linter, focus sur quelques fonctionnalités {.smaller}
+
+* Corriger la casse des auteurs, des titres et des titres de revue
+* Compléter et/ou corriger les abréviations de revue
+* Normaliser les DOI, les dates, les volumes, numéros et pages
+* Disposer de raccourcis-clavier pour la mise en forme enrichie -> réponse simple à [Comment puis-je mettre en forme certains mots d'un titre: par ex. en italique, en exposant ou en indice ?](https://docs.zotero-fr.org/kb/rich_text_bibliography/)
+  * Exposant : `Ctrl` + `Shift` + `+`
+  * Indice : `Ctrl` + `=`
+  * Gras : `Ctrl` + `B`
+  * Italique : `Ctrl` + `I`
+
+## Zutilo, le couteau suisse
+
+Par le biais d'options de menu supplémentaires, Zutilo ajoute des fonctions à Zotero ou simplifie l'usage de fonctions existantes. Voici quelques-unes des fonctionnalités de Zutilo.
+
+* Copier, coller et retirer des ensembles de marqueurs.
+* Créer des liens de "Connexe" entre les documents sélectionnés grâce à un clic-droit avec le bouton de la souris.
+* Copier et coller les auteurs.
+
+## Zutilo, le couteau suisse
+
+![Aperçu des fonctionnalités de Zutilo depuis la fenêtre des paramètres](img/zutilo_parametres.png)
+
+## Zutilo, ouvrir le couteau suisse
+
+Parmi toutes [les fonctionnalités de Zutilo décrites dans ce fichier](https://github.com/wshanks/Zutilo/blob/master/i18n/fr/readme/docs/COMMANDS.md), notez:
+
+* 👍 les 2 fonctionnalités qui vous semblent **les plus utiles**,
+* ☝️  2 fonctionnalités que **vous ne comprenez pas** et pour lesquelles vous souhaiteriez une démo.
+
+## Actions & Tags, des menus déroulants et des scripts {.smaller}
+
+Actions & Tags vous permet d'optimiser votre organisation et votre flux de travail, en définissant des actions déclenchées automatiquement et/ou manuellement. 
+
+* Les opérations **automatiques**, configurables avec l'interface à menu déroulant, concernent uniquement **la gestion des marqueurs** et sont déclenchées par un nombre limité d'événements simples et univoques (création d'un document, d'une note, fermeture d'un onglet, etc.).
+* Les **scripts** ouvrent des possibilités bien plus étendues. Il n'est pas nécessaire de savoir coder car il existe des scripts prêts à l'emploi. 😅
+
+
+## Actions & Tags : les menus déroulants
+
+2 actions existent déjà, pour ajouter et retirer automatiquement le marqueur `\unread`.
+
+* L'événement qui déclenche l'ajout automatique du marqueur est la création d'un document, **qu'un fichier joint lui soit associé ou non**.
+* L'événement qui déclenche le retrait automatique du marqueur est **la fermeture de l'onglet du lecteur de PDF**, dans lequel est ouvert le fichier PDF joint au document.
+
+👉 [Les paramètres des actions en détail](https://github.com/fflamerie/zotero_modules/blob/main/content/zotero_modules_COURS.md#param%C3%A8tres-des-actions)
+
+## Les paramètres de Actions & Tags
+
+![Modification d'une action depuis la fenêtre des paramètres de Actions & Tags](img/zotero_modules_param_AT.png)
+
+
+## Actions & Tags : les scripts
+
+Le développeur de Actions & Tags maintient une [liste partagée de scripts personnalisés](https://github.com/windingwind/zotero-actions-tags/discussions/categories/action-scripts).
+
+🛠️ Installons ensemble le script [Bulk Edit Multiple Items](https://github.com/windingwind/zotero-actions-tags/discussions/343).
+
+Autres scripts recommandables:
+
+* [Collection Tags](https://github.com/windingwind/zotero-actions-tags/discussions/245)
+* [Batch Tag Operations](https://github.com/windingwind/zotero-actions-tags/discussions/351)
+* [Backup Attachment(s)](https://github.com/windingwind/zotero-actions-tags/discussions/347)
+
+## Actions & Tags : le script "Bulk Edit Multiple Items"
+
+![Première fenêtre de dialogue du script "Bulk Edit Multiple Items"](img/ActionsTags_bulk_edit_items.png)
+
+# A vous de tester
+
+
+## A vous de tester {.smaller}
+
+🛠️ Nous allons maintenant tester d'autres extensions, selon les fonctionnalités supplémentaires que vous voudriez voir ajouter à Zotero.
+
+Chacun d'entre vous va installer et tester l'extension de son choix. Plusieurs personnes peuvent tester la même extension.
+
+Voici quelques suggestions.
+
+* [**ZotMoov**](https://github.com/wileyyugioh/zotmoov/) pour améliorer la gestion des fichiers joints.
+* [**Zotero PDF Translate**](https://github.com/windingwind/zotero-pdf-translate) pour traduire des extraits de PDF à partir du lecteur de PDF intégré à Zotero, traduire automatiquement les résumés, etc.
+* [**Zoplicate**](https://github.com/ChenglongMa/zoplicate) pour améliorer la gestion des doublons et par exemple les fusionner par lot.
+
+# Questions et conclusion
+
+## Liens utiles
+
+📧 [frederique.flamerie@pm.me](mailto:frederique.flamerie@pm.me)
+
+🔗 [https://frederique-flamerie.fr](https://frederique-flamerie.fr)
+
+📑 [Support du stage "Approfondissement Zotero : les extensions de Zotero" - durée 3h](https://github.com/fflamerie/zotero_modules)
+
+📝[Billet du blog Zotero francophone "Les extensions dans Zotero 7"](https://zotero.hypotheses.org/5162)
+ 
