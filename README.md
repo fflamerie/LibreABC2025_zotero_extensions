@@ -4,9 +4,9 @@ Support de l'atelier "Zotero+ : les extensions de Zotero" - [LibreABC 2025](http
 
 ## Diaporama
 
-* [Diaporama au format PDF]
-* [Diaporama au format HTML]
-* Fichiers source
+* [Diaporama au format PDF](https://github.com/fflamerie/LibreABC2025_zotero_extensions/blob/main/LibreABC2025_zotero_extensions.pdf)
+* [Diaporama au format HTML](https://github.com/fflamerie/LibreABC2025_zotero_extensions/blob/main/docs/LibreABC2025_zotero_extensions.html)
+* [Fichiers source](https://github.com/fflamerie/LibreABC2025_zotero_extensions/blob/main/docs/LibreABC_2025_zotero_extensions.zip)
 
 ## Descriptif
 
