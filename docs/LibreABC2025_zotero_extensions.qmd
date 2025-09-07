@@ -1,15 +1,15 @@
 ---
 title: "Zotero+ : les extensions de Zotero"
 author: "Frédérique Flamerie"
+licence: "CC BY-SA 4.0"
 date: "9 septembre 2025"
 format: revealjs
 theme: simple
-footer: "LibreABC 2025"
 slide-number: true
 progress: true
 center: true
 embed-resources: true
-logo: "img/by-sa.png"
+logo: "img/LibreABC_logo.png"
 
 ---
 
@@ -30,6 +30,7 @@ Dans un second temps, les participants seront invités à tester une ou plusieur
 #### Zutilo, le couteau suisse
 #### Actions & Tags, des menus déroulants et des scripts
 ### A vous de tester
+### Questions et conclusion
 
 # Les essentielles
 
@@ -51,24 +52,45 @@ Les corrections effectuées par Linter peuvent être lancées sur une sélection
 * soit de façon distincte et sélective,
 * soit toutes en même temps d'un seul coup avec la commande "Lint and Fix". Cette commande peut par ailleurs s'exécuter automatiquement à l'enregistrement d'un nouveau document.
 
-::: aside
-📌 Ces corrections peuvent être configurées et/ou désactivées de la commande "Lint and Fix" dans les paramètres de Linter.
-:::
-
-## La commande _Lint and Fix_ de Linter
+## La commande "Lint and Fix" de Linter
 
 ![Menu contextuel Linter, avec la commande "Lint and Fix" et les commandes individuelles](img/zotero_modules_linter_menu.png)
 
 ## Linter, focus sur quelques fonctionnalités {.smaller}
 
-* Corriger la casse des auteurs, des titres et des titres de revue
-* Compléter et/ou corriger les abréviations de revue
+* Corriger la **casse** des auteurs, des titres et des titres de revue
+* Compléter et/ou corriger les **abréviations de titres de revues**
 * Normaliser les DOI, les dates, les volumes, numéros et pages
-* Disposer de raccourcis-clavier pour la mise en forme enrichie -> réponse simple à [Comment puis-je mettre en forme certains mots d'un titre: par ex. en italique, en exposant ou en indice ?](https://docs.zotero-fr.org/kb/rich_text_bibliography/)
+* Disposer de raccourcis-clavier pour la mise en forme enrichie 👉 réponse simple à [Comment puis-je mettre en forme certains mots d'un titre: par ex. en italique, en exposant ou en indice ?](https://docs.zotero-fr.org/kb/rich_text_bibliography/)
   * Exposant : `Ctrl` + `Shift` + `+`
   * Indice : `Ctrl` + `=`
   * Gras : `Ctrl` + `B`
   * Italique : `Ctrl` + `I`
+
+## Corriger la casse avec Linter {.smaller}
+
+Zotero 7 intègre désormais certaines de ces corrections, mais Linter apporte diverses améliorations.
+
+* Pour les **auteurs**, la fonctionnalité manuelle de Zotero peut être rendue automatique.
+* Pour les **titres**, Linter ajoute à la fonctionnalité de Zotero de conversion automatique de la casse de titre vers la casse de phrase la prise en compte de certains noms propres (notamment les formules chimiques).
+* Pour les **titres de revues**, il s'agit d'appliquer la casse de titre.
+
+⚠️ Il n'est pas d'usage d'utiliser la casse de titre pour les titres de revues françaises, aussi il est plus prudent d'exclure cette option de la commande "Lint and Fix" si vous citez beaucoup d'articles de revues françaises. 
+
+## Corriger les abréviations des titres de revues avec Linter - 1/2 {.smaller}
+
+Linter peut compléter et/ou corriger le champ "Abrév. de revue" automatiquement, en fonction de l'une des 2 options suivantes. 
+
+* Le titre de revue abrégé doit être conforme à la [norme ISO4](https://fr.wikipedia.org/wiki/ISO_4) : Linter peut le construire à partir de la ["Liste d’abréviations de mots de titres" officielle de l'ISSN](https://www.issn.org/fr/services-et-prestations/services-en-ligne/acces-a-la-ltwa/), ou LTWA en anglais.
+* Le titre de revue abrégé est ajouté à partir d'une **liste personnalisée** au format CSV ou JSON, dont vous devez spécifier l'emplacement. 
+
+## Corriger les abréviations des titres de revues avec Linter - 2/2 {.smaller}
+⚠️ Les règles d'abréviation des titres de revues appliquées par certains éditeurs ou certaines bases de données ne se conforment pas à la norme ISO4. Ainsi [les règles d'abréviation de la _NLM (National Library of Medicine_](https://www.nlm.nih.gov/tsd/cataloging/contructitleabbre.html), appliquées dans le domaine biomédical, diffèrent notamment de celles de la norme ISO4 en ce qu'elles ne prévoient pas de point à la fin de chaque segment abrégé. Notez que [la fonctionnalité d'abréviation des titres de revue intégrée dans les extensions de traitement de texte de Zotero](https://docs.zotero-fr.org/word_processor_plugin_usage/#preferences-du-document) applique les règles d'abréviation de la NLM.
+
+Exemple pour le titre de revue _Journal of mass spectrometry_
+
+* Titre abrégé selon la norme ISO4 : _J. mass spectrom._
+* Titre abrégé selon les règles de la NLM : _J Mass Spectrom_
 
 ## Zutilo, le couteau suisse
 
@@ -104,28 +126,72 @@ Actions & Tags vous permet d'optimiser votre organisation et votre flux de trava
 * L'événement qui déclenche l'ajout automatique du marqueur est la création d'un document, **qu'un fichier joint lui soit associé ou non**.
 * L'événement qui déclenche le retrait automatique du marqueur est **la fermeture de l'onglet du lecteur de PDF**, dans lequel est ouvert le fichier PDF joint au document.
 
-👉 [Les paramètres des actions en détail](https://github.com/fflamerie/zotero_modules/blob/main/content/zotero_modules_COURS.md#param%C3%A8tres-des-actions)
-
 ## Les paramètres de Actions & Tags
 
 ![Modification d'une action depuis la fenêtre des paramètres de Actions & Tags](img/zotero_modules_param_AT.png)
 
+## Paramètres des actions dans Actions & Tags : les libellés
 
-## Actions & Tags : les scripts
+* Le libellé défini dans le champ **_Name_** est utilisé uniquement dans la fenêtre de paramétrage.
+* Le libellé saisi dans **_Menu Label_** s'affiche dans les menus contextuels dans lesquels vous choisissez de faire apparaître l'action. Dans le menu des annotations, l'option s'affiche directement. Dans les autres menus, elle apparaît derrière le menu ou le bouton _Trigger Action_. Si aucune valeur n'est saisie, l'action est masquée.
+
+## Paramètres des actions dans Actions & Tags : l'événement {.smaller}  
+
+L'événement qui déclenche l'action est défini dans le champ **_Event_**. 
+
+| Evénement              | Description : l'action est déclenchée  quand...        |
+| ------------------ | --------------------------------------------------------- |
+| `Create Item`       | Un document est créé.             |
+| `Open File`         | Le fichier joint est ouvert.        |
+| `Close Tab`         | L'onglet du lecteur de PDF est fermé.     |
+| `Create Annotation` | Une annotation est créée.                  |
+| `Create Note`       | Une note est créée.                         |
+| `Append Annotation` | Une annotation est ajoutée au document cible.  |
+| `Append Note`       | Une note est ajoutée au document cible.         |
+| `Program Startup`   | Le client Zotero ou Actions & Tags démarre. |
+| `Main Window Load`   | La fenêtre principale est chargée.                 |
+| `Main Window Unload` | La fenêtre principale est refermée.      |
+
+
+## Paramètres des actions dans Actions & Tags : l'opération {.smaller}
+
+L'opération à effectuer par l'action est définie dans le champ **_Operation_**. Les opérations prédéfinies concernent les marqueurs.
+
+| Opération      | Description                                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| `Add Tags`      | Ajoute le marqueur(s) au document cible.                                        |
+| `Remove Tags`   | Retire le marqueur(s) du document cible.                                      |
+| `Toggle Tags`   | Bascule le marqueur(s) : le marqueur est ajouté si le document ne l'a pas et retiré dans le cas contraire.                                                                                  |
+| `Script` | Exécute un script personnalisé.                                                |
+| `Trigger Other Actions`  | Lance d'autres actions personnalisées.                                    |
+
+## Paramètres des actions dans Actions & Tags : les données 
+
+Les données de l'action sont définies dans le champ  **_Data_**.
+
+Pour les opérations concernant les **marqueurs**, il s'agit des marqueurs séparés par des virgules.
+
+Pour les **scripts personnalisés**, il s'agit du code du script.
+
+Pour le **lancement d'autres actions**, il s'agit du nom des actions (une par ligne).
+
+
+## Actions & Tags : les scripts personnalisés
 
 Le développeur de Actions & Tags maintient une [liste partagée de scripts personnalisés](https://github.com/windingwind/zotero-actions-tags/discussions/categories/action-scripts).
 
 🛠️ Installons ensemble le script [Bulk Edit Multiple Items](https://github.com/windingwind/zotero-actions-tags/discussions/343).
 
-Autres scripts recommandables:
-
-* [Collection Tags](https://github.com/windingwind/zotero-actions-tags/discussions/245)
-* [Batch Tag Operations](https://github.com/windingwind/zotero-actions-tags/discussions/351)
-* [Backup Attachment(s)](https://github.com/windingwind/zotero-actions-tags/discussions/347)
 
 ## Actions & Tags : le script "Bulk Edit Multiple Items"
 
 ![Première fenêtre de dialogue du script "Bulk Edit Multiple Items"](img/ActionsTags_bulk_edit_items.png)
+
+## Actions & Tags : autres scripts recommandables
+
+* [Collection Tags](https://github.com/windingwind/zotero-actions-tags/discussions/245) pour créer et associer automatiquement aux références les marqueurs correspondant à leurs collections
+* [Batch Tag Operations](https://github.com/windingwind/zotero-actions-tags/discussions/351) pour effectuer sur tout ou partie des marqueurs des opérations telles que combiner, scinder, retirer, préfixer ou suffixer, etc. 
+* [Backup Attachment(s)](https://github.com/windingwind/zotero-actions-tags/discussions/347) pour créer une copie de sauvegarde des fichiers PDF joints aux références 
 
 # A vous de tester
 
@@ -144,7 +210,7 @@ Voici quelques suggestions.
 
 # Questions et conclusion
 
-## Liens utiles
+## Contact et liens utiles
 
 📧 [frederique.flamerie@pm.me](mailto:frederique.flamerie@pm.me)
 
@@ -153,4 +219,8 @@ Voici quelques suggestions.
 📑 [Support du stage "Approfondissement Zotero : les extensions de Zotero" - durée 3h](https://github.com/fflamerie/zotero_modules)
 
 📝[Billet du blog Zotero francophone "Les extensions dans Zotero 7"](https://zotero.hypotheses.org/5162)
- 
+
+
+::: footer
+Support mis à disposition selon les termes de la [Licence Creative Commons Attribution - Partage dans les mêmes conditions 4.0 International Deed](https://creativecommons.org/licenses/by-sa/4.0/deed.en)</a>
+:::
