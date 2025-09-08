@@ -75,14 +75,14 @@ Zotero 7 intègre désormais certaines de ces corrections, mais Linter apporte d
 * Pour les **titres**, Linter ajoute à la fonctionnalité de Zotero de conversion automatique de la casse de titre vers la casse de phrase la prise en compte de certains noms propres (notamment les formules chimiques).
 * Pour les **titres de revues**, il s'agit d'appliquer la casse de titre.
 
-⚠️ Il n'est pas d'usage d'utiliser la casse de titre pour les titres de revues françaises, aussi il est plus prudent d'exclure cette option de la commande "Lint and Fix" si vous citez beaucoup d'articles de revues françaises. 
+⚠️ Il n'est pas d'usage d'utiliser la casse de titre pour les titres de revues en français, aussi est-il plus prudent d'exclure cette option de la commande "Lint and Fix" si vous citez beaucoup d'articles dont le titre de revue est en français. 
 
 ## Corriger les abréviations des titres de revues avec Linter - 1/2 {.smaller}
 
 Linter peut compléter et/ou corriger le champ "Abrév. de revue" automatiquement, en fonction de l'une des 2 options suivantes. 
 
 * Le titre de revue abrégé doit être conforme à la [norme ISO4](https://fr.wikipedia.org/wiki/ISO_4) : Linter peut le construire à partir de la ["Liste d’abréviations de mots de titres" officielle de l'ISSN](https://www.issn.org/fr/services-et-prestations/services-en-ligne/acces-a-la-ltwa/), ou LTWA en anglais.
-* Le titre de revue abrégé est ajouté à partir d'une **liste personnalisée** au format CSV ou JSON, dont vous devez spécifier l'emplacement. 
+* Le titre de revue abrégé est ajouté à partir d'une **liste personnalisée** au format CSV, dont vous devez spécifier l'emplacement. 
 
 ## Corriger les abréviations des titres de revues avec Linter - 2/2 {.smaller}
 ⚠️ Les règles d'abréviation des titres de revues appliquées par certains éditeurs ou certaines bases de données ne se conforment pas à la norme ISO4. Ainsi [les règles d'abréviation de la _NLM (National Library of Medicine_](https://www.nlm.nih.gov/tsd/cataloging/contructitleabbre.html), appliquées dans le domaine biomédical, diffèrent notamment de celles de la norme ISO4 en ce qu'elles ne prévoient pas de point à la fin de chaque segment abrégé. Notez que [la fonctionnalité d'abréviation des titres de revue intégrée dans les extensions de traitement de texte de Zotero](https://docs.zotero-fr.org/word_processor_plugin_usage/#preferences-du-document) applique les règles d'abréviation de la NLM.
@@ -115,7 +115,7 @@ Parmi toutes [les fonctionnalités de Zutilo décrites dans ce fichier](https://
 
 Actions & Tags vous permet d'optimiser votre organisation et votre flux de travail, en définissant des actions déclenchées automatiquement et/ou manuellement. 
 
-* Les opérations **automatiques**, configurables avec l'interface à menu déroulant, concernent uniquement **la gestion des marqueurs** et sont déclenchées par un nombre limité d'événements simples et univoques (création d'un document, d'une note, fermeture d'un onglet, etc.).
+* Les opérations **automatiques**, configurables avec l'interface à menus déroulants, concernent uniquement **la gestion des marqueurs** et sont déclenchées par un nombre limité d'événements simples et univoques (création d'un document, d'une note, fermeture d'un onglet, etc.).
 * Les **scripts** ouvrent des possibilités bien plus étendues. Il n'est pas nécessaire de savoir coder car il existe des scripts prêts à l'emploi. 😅
 
 
@@ -124,7 +124,7 @@ Actions & Tags vous permet d'optimiser votre organisation et votre flux de trava
 2 actions existent déjà, pour ajouter et retirer automatiquement le marqueur `\unread`.
 
 * L'événement qui déclenche l'ajout automatique du marqueur est la création d'un document, **qu'un fichier joint lui soit associé ou non**.
-* L'événement qui déclenche le retrait automatique du marqueur est **la fermeture de l'onglet du lecteur de PDF**, dans lequel est ouvert le fichier PDF joint au document.
+* L'événement qui déclenche le retrait automatique du marqueur est **la fermeture de l'onglet du lecteur de PDF** dans lequel est ouvert le fichier PDF joint au document.
 
 ## Les paramètres de Actions & Tags
 
@@ -139,41 +139,39 @@ Actions & Tags vous permet d'optimiser votre organisation et votre flux de trava
 
 L'événement qui déclenche l'action est défini dans le champ **_Event_**. 
 
-| Evénement              | Description : l'action est déclenchée  quand...        |
-| ------------------ | --------------------------------------------------------- |
-| `Create Item`       | Un document est créé.             |
-| `Open File`         | Le fichier joint est ouvert.        |
-| `Close Tab`         | L'onglet du lecteur de PDF est fermé.     |
-| `Create Annotation` | Une annotation est créée.                  |
-| `Create Note`       | Une note est créée.                         |
-| `Append Annotation` | Une annotation est ajoutée au document cible.  |
-| `Append Note`       | Une note est ajoutée au document cible.         |
-| `Program Startup`   | Le client Zotero ou Actions & Tags démarre. |
-| `Main Window Load`   | La fenêtre principale est chargée.                 |
-| `Main Window Unload` | La fenêtre principale est refermée.      |
+| Evénement            | Description : l'action est déclenchée  quand... |
+|----------------------|-------------------------------------------------|
+| `Create Item`        | Un document est créé.                           |
+| `Open File`          | Le fichier joint est ouvert.                    |
+| `Close Tab`          | L'onglet du lecteur de PDF est fermé.           |
+| `Create Annotation`  | Une annotation est créée.                       |
+| `Create Note`        | Une note est créée.                             |
+| `Append Annotation`  | Une annotation est ajoutée au document cible.   |
+| `Append Note`        | Une note est ajoutée au document cible.         |
+| `Program Startup`    | Le client Zotero ou Actions & Tags démarre.     |
+| `Main Window Load`   | La fenêtre principale est chargée.              |
+| `Main Window Unload` | La fenêtre principale est refermée.             |
 
 
 ## Paramètres des actions dans Actions & Tags : l'opération {.smaller}
 
 L'opération à effectuer par l'action est définie dans le champ **_Operation_**. Les opérations prédéfinies concernent les marqueurs.
 
-| Opération      | Description                                                                    |
-| -------------- | ------------------------------------------------------------------------------ |
-| `Add Tags`      | Ajoute le marqueur(s) au document cible.                                        |
-| `Remove Tags`   | Retire le marqueur(s) du document cible.                                      |
-| `Toggle Tags`   | Bascule le marqueur(s) : le marqueur est ajouté si le document ne l'a pas et retiré dans le cas contraire.                                                                                  |
-| `Script` | Exécute un script personnalisé.                                                |
-| `Trigger Other Actions`  | Lance d'autres actions personnalisées.                                    |
+| Opération      | Description                                                                    	|
+| -------------- | ------------------------------------------------------------------------------ 	|
+| `Add Tags`      | Ajoute le marqueur(s) au document cible.                                      	|
+| `Remove Tags`   | Retire le marqueur(s) du document cible.                                     	|
+| `Toggle Tags`   | Bascule le marqueur(s) : le marqueur est ajouté si le document ne l'a pas et retiré dans le cas contraire.                                                                                  	  	|
+| `Script` | Exécute un script personnalisé.                                                    	|
+| `Trigger Other Actions`  | Lance d'autres actions personnalisées.                              	|
 
 ## Paramètres des actions dans Actions & Tags : les données 
 
 Les données de l'action sont définies dans le champ  **_Data_**.
 
-Pour les opérations concernant les **marqueurs**, il s'agit des marqueurs séparés par des virgules.
-
-Pour les **scripts personnalisés**, il s'agit du code du script.
-
-Pour le **lancement d'autres actions**, il s'agit du nom des actions (une par ligne).
+ * Pour les opérations concernant les **marqueurs**, il s'agit des marqueurs séparés par des virgules.
+ * Pour les **scripts personnalisés**, il s'agit du code du script.
+ * Pour le **lancement d'autres actions**, il s'agit du nom des actions (une par ligne).
 
 
 ## Actions & Tags : les scripts personnalisés
@@ -200,7 +198,7 @@ Le développeur de Actions & Tags maintient une [liste partagée de scripts pers
 
 🛠️ Nous allons maintenant tester d'autres extensions, selon les fonctionnalités supplémentaires que vous voudriez voir ajouter à Zotero.
 
-Chacun d'entre vous va installer et tester l'extension de son choix. Plusieurs personnes peuvent tester la même extension.
+Installez et testez l'extension de son choix. Plusieurs personnes peuvent tester la même extension.
 
 Voici quelques suggestions.
 
